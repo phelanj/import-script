@@ -12,23 +12,23 @@ import subprocess
 import sys
 
 if len(sys.argv) != 2:
-	print('You must supply the path to the data folder as an argument.')
+	print('You must supply the path to the data folder and xml file.')
 	sys.exit(1)
 
 DATA_PATH = os.path.abspath(str(sys.argv[1]))
 if not os.path.exists(DATA_PATH):
 	print DATA_PATH + ' does not exist.'
 	sys.exit(1)
-
+	
 DATABASE_PATH = DATA_PATH + '/data.sqlite'
 if not os.path.exists(DATABASE_PATH):
 	print("Database does not exist. You need to run import.py first.")
 	sys.exit(1);
 
-EXHIBITS_XML_PATH = DATA_PATH + '/exhibits.xml'
+EXHIBITS_XML_PATH = DATA_PATH +  '/' + (str(sys.argv[2]))	
 if not os.path.exists(EXHIBITS_XML_PATH):
 	print("""Exhibits XML file does not exist. It should be located in the
-		  root of the data folder and called exhibits.xml.""")
+		  root of the data folder.""")
 	sys.exit(1);
 
 def idOfObject(cursor, alias, pointer):
