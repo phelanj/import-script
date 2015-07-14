@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /home/wads/dlib-wall/import
+
+./import_exhibits_2cl.py /home/wads/data/dlib-wall-data exhibits.xml
