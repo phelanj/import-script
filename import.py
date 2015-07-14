@@ -11,7 +11,7 @@ import string
 import subprocess
 import sys
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
 	print('You must supply the path to the data folder and xml file.')
 	sys.exit(1)
 
